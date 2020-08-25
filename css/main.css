@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Pinyon+Script&display=swap');
+:root{
+	--primary: hsl(315, 50%, 70%);
+	--secondary: hsl(0, 0%, 0%);
+	--primary_darker: hsl(315, 50%, 45%);
+}
+*, html, div, .container, .col-md-12{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background: var(--primary);
+}
+.container{
+	margin: 0 auto;
+	justify-content: center;
+}
+.card{
+	margin-top: 5%;
+}
+nav{
+	height: 10vh;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	display: inline-flex;
+	color: var(--primary);
+	background: var(--secondary);
+	box-shadow: 0px 2px 10px 3px var(--primary_darker);
+	align-items: center;
+	z-index: 100;
+}
+nav a{
+	margin: 0 auto;
+}
+.space-top{
+	height: 8vh;
+}
+.body_link{
+	color: var(--primary_darker);
+}
+.body_link:hover{
+	color: var(--secondary);
+}
+.body_link::actived{
+	color: var(--primary_darker);
+}
+textarea{
+	resize: none;
+	height: inherit;
+}
+footer{
+	/*background: var(--secondary);
+	color: var(--primary);
+	box-shadow: 0px 2px 10px 3px var(--primary_darker);*/
+	align-items: center;
+	justify-content: center;
+}
+.btn-custom{
+	border-color: var(--primary);
+	color: var(--primary);
+}
+.btn-custom:hover{
+	background-color: var(--primary_darker);
+	color: var(--secondary);
+	border-color: var(--primary_darker);
+}
+.space-bottom{
+	height: 7vh;
+}
+a{
+	color: var(--primary);
+	text-decoration: none;
+	transition: 0.5s;
+}
+a:hover{
+	color: var(--primary_darker);
+	text-decoration: none;
+	transition: 0.5s;
+}
+.logo_site{
+	padding: 0.5vh 0.5vw;
+	width: 4.5vw;
+}
+.logo_car{
+	padding: 0.5vh 0.5vw;
+	width: 3vw;
+}
+.eye-password{
+	position: relative;
+}
+.eye-password input[type=password]{
+	padding-right: 40px;
+}
+.eye-password svg{
+	position: absolute;
+	right: 25px;
+	top: 39px;
+}
+h1, h2{
+	text-align: center;
+}
+
+#items-wrapper{
+  width: 100vw;
+}
+#items{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.item{
+  flex: none;
+  width: 100%;
+  height: 400px;
+  scroll-snap-align: start;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: none;
+}
+#items img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* width */
+::-webkit-scrollbar{
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb{
+  background: var(--primary_darker);
+  border-radius: 0.5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover{
+  background: var(--secondary);
+}
