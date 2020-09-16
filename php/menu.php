@@ -26,15 +26,15 @@
 				<a class="nav-link" href="index.php#sobre">Sobre nós</a>
 			</li>
 			<?php
-				if(isset($_SESSION['user'])){
+				if(isset($_SESSION['cd_client'])){
 			?>
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">$User 😉</a>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Olá <?php echo $_SESSION['ds_client_user']; ?>! 😉</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="client.php?status=client_data">Seus dados</a>
 					<a class="dropdown-item" href="client.php?status=client_favs">Favoritos</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="logout.php">
+					<a class="dropdown-item" href="php/logout.php">
 						<button class="btn btn-block btn-outline-danger">Sair</button>
 					</a>
 				</div>

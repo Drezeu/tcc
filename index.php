@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	include_once('php/db_connection.php');
-	//$_SESSION['user'] = 1;
 ?>
 <!DOCTYPE html>
 <html lang="pt">

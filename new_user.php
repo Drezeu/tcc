@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include_once('php/db_connection.php');
-	if(isset($_SESSION['user'])){
+	if(isset($_SESSION['cd_client'])){
 		header('location: index.php');
 	}
 	else{
@@ -38,11 +38,24 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-					<form class="form form-group">
+					<form class="form form-group" id="new_client">
+						<div class="row">
+							<div class="col-md-5">
+								<hr>
+							</div>
+							<div class="col-md-2">
+								<center>
+									<h4>Geral</h4>
+								</center>
+							</div>
+							<div class="col-md-5">
+								<hr>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<label for="name"><strong>Nome:</strong></label>
-								<input class="form-control" type="text" name="name" id="name" placeholder="Tieta Perfumaria" required="required">
+								<label for="user"><strong>Usuário:</strong></label>
+								<input class="form-control" type="text" name="user" id="user" placeholder="Tieta Perfumaria" required="required">
 							</div>
 							<div class="col-md-6">
 								<label for="email"><strong>Email:</strong></label>
@@ -64,6 +77,87 @@
 								<?php
 									include_once('php/eye_conf.php');
 								?>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-5">
+								<hr>
+							</div>
+							<div class="col-md-2">
+								<center>
+									<h4>Dados pessoais</h4>
+								</center>
+							</div>
+							<div class="col-md-5">
+								<hr>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="complete_name"><strong>Nome completo:</strong></label>
+								<input class="form-control" type="text" name="complete_name" id="complete_name" required="required">
+							</div>
+							<div class="col-md-6">
+								<label for="birthdate"><strong>Data de nascimento:</strong></label>
+								<input class="form-control" type="text" name="birthdate" id="birthdate" required="required" onkeypress="$(this).mask('00/00/0000');">
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="cpf"><strong>CPF:</strong></label>
+								<input class="form-control" type="text" name="cpf" id="cpf" required="required" onkeypress="$(this).mask('000.000.000-00');">
+							</div>
+							<div class="col-md-6">
+								<label for="phone"><strong>Telefone/Celular:</strong></label>
+								<input class="form-control" type="text" name="phone" id="phone" required="required" onkeypress="$(this).mask('(00) 00000-0000');">
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-5">
+								<hr>
+							</div>
+							<div class="col-md-2">
+								<center>
+									<h4>Endereço</h4>
+								</center>
+							</div>
+							<div class="col-md-5">
+								<hr>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="street"><strong>Rua:</strong></label>
+								<input class="form-control" type="text" name="street" id="street" required="required">
+							</div>
+							<div class="col-md-6">
+								<label for="neighborhood"><strong>Bairro</strong></label>
+								<input class="form-control" type="text" name="neighborhood" id="neighborhood" required="required">
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="city"><strong>Cidade:</strong></label>
+								<input class="form-control" type="text" name="city" id="city" required="required">
+							</div>
+							<div class="col-md-6">
+								<label for="state"><strong>Estado:</strong></label>
+								<input class="form-control" type="text" name="state" id="state" required="required">
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="complement"><strong>Complemento:</strong></label>
+								<input class="form-control" type="text" name="complement" id="complement" required="required">
+							</div>
+							<div class="col-md-6">
+								<label for="zipcode"><strong>CEP:</strong></label>
+								<input class="form-control" type="text" name="zipcode" id="zipcode" required="required" onkeypress="$(this).mask('00000-000');">
 							</div>
 						</div>
 						<br>

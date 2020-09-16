@@ -2,18 +2,14 @@
 	session_start();
 	include_once('php/db_connection.php');
 	if(isset($_SESSION['cd_client'])){
+		if($_SESSION['st_client_admin'] == 1){
 ?>
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
 		<?php
 			include_once("php/head.php");
-			if($_GET['status'] == 'client_data'){
-				Title('Seus dados');
-			}
-			if($_GET['status'] == 'client_favs'){
-				Title('Favoritos');
-			}
+			Title('Administração');
 		?>
 	</head>
 	<body>
@@ -24,26 +20,23 @@
 				?>
 			</div>
 			<br>
-			<?php
-				if($_GET['status'] == 'client_data'){
-			?>
 			<div class="row">
 				<div class="col-md-12">
-					<h1>Seus dados</h1>
+					<h1>Administração</h1>
 				</div>
 			</div>
-			<?php
-				}
-				if($_GET['status'] == 'client_favs'){
-			?>
+			<br>
 			<div class="row">
-				<div class="col-md-12">
-					<h1>Favoritos</h1>
+				<div class="col-md-3"></div>
+				<div class="col-md-3">
+					<button class="btn btn-block btn-primary">Novo produto</button>
 				</div>
+				<div class="col-md-3">
+					<button class="btn btn-block btn-primary">Nova categoria</button>
+				</div>
+				<div class="col-md-3"></div>
 			</div>
-			<?php
-				}
-			?>
+			<?php include_once('php/new_product.php'); ?>
 			<br>
 			<div class="row">
 				<?php
@@ -57,8 +50,12 @@
 	</body>
 </html>
 <?php
+		}
+		else{
+			header('location: index.php');
+		}
 	}
 	else{
-		header('location: index.php');
+		header('location: login.php');
 	}
 ?>
