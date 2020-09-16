@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include_once('php/db_connection.php');
-	if(isset($_SESSION['user'])){
+	if(isset($_SESSION['cd_client'])){
 		header('location: index.php');
 	}
 	else{
@@ -36,7 +36,7 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-					<form class="form form-group">
+					<form class="form form-group" id="login_client">
 						<div class="row">
 							<div class="col-md-3"></div>
 							<div class="col-md-6">
