@@ -3,13 +3,16 @@
 	--secondary: hsl(0, 0%, 0%);
 	--primary_darker: hsl(315, 50%, 45%);
 }
-*, html, div, .container, .col-md-12{
+*, html, div, body, .container{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 body{
-	background: var(--primary);
+	background-image: url(../img/background/bg.jpg);
+	background-repeat-x: no-repeat;
+	background-position-x: center;
+	overflow-x: hidden;
 }
 .container{
 	margin: 0 auto;
@@ -54,36 +57,33 @@ a:hover{
 	padding: 0.5vh 0.5vw;
 	width: 3vw;
 }
-.eye-password{
-	position: relative;
-}
-.eye-password input[type=password]{
-	padding-right: 40px;
-}
-.eye-password svg{
-	position: absolute;
-	right: 25px;
-	top: 39px;
-}
 h1, h2{
 	text-align: center;
 }
-/*Styled scrollbar
- width 
-::-webkit-scrollbar{
-  width: 10px;
+.sale-container{
+	margin: 0% 7% 0% 7%;
 }
-Track 
-::-webkit-scrollbar-track{
-  background: transparent;
+.avatar{
+	max-height: 7.5rem;
+	display: none;
 }
-Handle
-::-webkit-scrollbar-thumb{
-  background: var(--primary_darker);
-  border-radius: 0.5px;
+.product_picture{
+	max-height: 7.5rem;
+	display: none;
 }
-Handle on hover
-::-webkit-scrollbar-thumb:hover{
-  background: var(--secondary);
+.product_list_img{
+	display: block;
+	margin-top: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	clip-path: circle(at center);
+	width: 12rem;
 }
-*/
+.client_list_img{
+	display: block;
+	margin-top: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	clip-path: circle(at center);
+	width: 12rem;
+}

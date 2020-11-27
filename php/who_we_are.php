@@ -1,4 +1,4 @@
-<div class="col-md-6" id="quem_somos">
+<div class="col-md-12">
 	<hr>
 	<h2>Quem somos?</h2>
 	<br>
