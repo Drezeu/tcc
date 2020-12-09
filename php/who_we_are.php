@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12" id="who_we_are">
 	<hr>
 	<h2>Quem somos?</h2>
 	<br>

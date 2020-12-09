@@ -1,5 +1,7 @@
 <div class="row">
-	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<a href="admin.php?page=admin_panel" class="btn btn-block btn-info"><- Painel de administração</a>
+	</div>
 	<div class="col-md-4">
 		<h1>Lista de produtos</h1>
 	</div>

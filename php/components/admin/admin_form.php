@@ -2,7 +2,11 @@
 	switch($_GET['admin_form_type']){
 		case 'new_admin':
 			$form_id = 'new_admin';
-			$data_request = null;
+			$data_request = '
+				<form id="data_address_states_list_request">
+					<input type="hidden" name="form_action" value="address_states_list_request">
+				</form>
+			';
 			$form_action = '
 				<input type="hidden" name="form_action" value="'.$form_id.'">
 			';
@@ -16,16 +20,10 @@
 					<div class="col-md-6 eye-password">
 						<label for="password"><strong>Nova senha:</strong></label>
 						<input class="form-control" type="password" name="password" id="password" '.$form_attr_input.'>
-						<?php
-							include_once("php/eye.php");
-						?>
 					</div>
 					<div class="col-md-6 eye-password">
 						<label for="conf_password"><strong>Confirmar senha:</strong></label>
 						<input class="form-control" type="password" name="conf_password" id="conf_password" '.$form_attr_input.'>
-						<?php
-							include_once("php/eye_conf.php");
-						?>
 					</div>
 				</div>
 			';
@@ -43,6 +41,9 @@
 		case 'data_admin':
 			$form_id = 'data_admin';
 			$data_request = '
+				<form id="data_address_states_list_request">
+					<input type="hidden" name="form_action" value="address_states_list_request">
+				</form>
 				<form id="data_admin_request">
 					<input type="hidden" name="form_action" value="data_admin">
 				</form>
@@ -67,6 +68,9 @@
 		case 'edit_admin':
 			$form_id = 'edit_admin';
 			$data_request = '
+				<form id="data_address_states_list_request">
+					<input type="hidden" name="form_action" value="address_states_list_request">
+				</form>
 				<form id="data_admin_request">
 					<input type="hidden" name="form_action" value="data_admin">
 				</form>
@@ -201,34 +205,34 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
+					<label for="zipcode"><strong>CEP:</strong></label>
+					<input class="form-control" type="text" name="zipcode" id="zipcode" <?php echo $form_attr_input; ?> maxlength="9">
+				</div>
+				<div class="col-md-6">
 					<label for="street"><strong>Logradouro:</strong></label>
 					<input class="form-control" type="text" name="street" id="street" <?php echo $form_attr_input; ?>>
 				</div>
+			</div>
+			<br>
+			<div class="row">
 				<div class="col-md-6">
 					<label for="neighborhood"><strong>Bairro</strong></label>
 					<input class="form-control" type="text" name="neighborhood" id="neighborhood" <?php echo $form_attr_input; ?>>
 				</div>
-			</div>
-			<br>
-			<div class="row">
 				<div class="col-md-6">
 					<label for="city"><strong>Cidade:</strong></label>
 					<input class="form-control" type="text" name="city" id="city" <?php echo $form_attr_input; ?>>
 				</div>
-				<div class="col-md-6">
-					<label for="state"><strong>Estado:</strong></label>
-					<input class="form-control" type="text" name="state" id="state" <?php echo $form_attr_input; ?>>
-				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-6">
-					<label for="complement"><strong>Complemento:</strong></label>
-					<input class="form-control" type="text" name="complement" id="complement" <?php echo $form_attr_input; ?>>
+					<label for="state"><strong>Estado:</strong></label>
+					<select class="form-control" type="text" name="state" id="state" <?php echo $form_attr_input; ?>></select>
 				</div>
 				<div class="col-md-6">
-					<label for="zipcode"><strong>CEP:</strong></label>
-					<input class="form-control" type="text" name="zipcode" id="zipcode" <?php echo $form_attr_input; ?> onkeypress="$(this).mask('00000-000');">
+					<label for="complement"><strong>Complemento:</strong></label>
+					<input class="form-control" type="text" name="complement" id="complement" <?php echo $form_attr_input; ?>>
 				</div>
 			</div>
 			<br>

@@ -4,7 +4,7 @@
 		<h1>Lista de categorias</h1>
 	</div>
 	<div class="col-md-4">
-		<a href="category.php?page=category_new" class="btn btn-block btn-info">Nova categoria</a>
+		<a href="admin_category.php?page=category_new" class="btn btn-block btn-info">Nova categoria</a>
 	</div>
 </div>
 <div class="row">
