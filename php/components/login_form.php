@@ -20,9 +20,6 @@
 				<div class="col-md-6 eye-password">
 					<label for="password"><strong>Senha:</strong></label>
 					<input class="form-control" type="password" name="password" id="password" required="required">
-					<?php
-						include_once('php/eye.php');
-					?>
 				</div>
 				<div class="col-md-3"></div>
 			</div>

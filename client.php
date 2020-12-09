@@ -16,6 +16,7 @@
 				break;
 				case 'client_edit':
 					$title = 'Editar dados cadastrais';
+					$_GET['use_image'] = true;
 					$page_path = 'php/client/edit_client.php';
 				break;
 			}

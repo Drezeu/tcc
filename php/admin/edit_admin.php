@@ -1,5 +1,8 @@
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-4">
+		<a href="admin.php?page=admin_panel" class="btn btn-block btn-info"><- Painel de administração</a>
+	</div>
+	<div class="col-md-4">
 		<center>
 			<h1>
 				<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -9,7 +12,9 @@
 			</h1>
 		</center>
 	</div>
+	<div class="col-md-4"></div>
 </div>
+<hr>
 <?php
 	$_GET['admin_form_type'] = 'edit_admin';
 	include_once('php/components/admin/admin_form.php');

@@ -1,35 +1,23 @@
 <?php
 	include_once('php/components/header_includes.php');
-	if(isset($_SESSION['cd_client'])){
-		if($_SESSION['st_client_admin'] == 1){
-			if(isset($_GET['page']) == false){
-				header('location: admin.php?status=admin_panel');
-			}
-			else{
-				switch($_GET['page']){
-					case 'product_new':
-						$title = 'Novo produto';
-						$page_path = 'php/product/new_product.php';
-					break;
-					case 'product_data_list':
-						$title = 'Lista de produtos';
-						$page_path = 'php/product/data_product.php';
-					break;
-					case 'product_edit':
-						$title = 'Editar de produto';
-						$product_id = $_GET['product_id'];
-						$page_path = 'php/product/edit_product.php';
-					break;
-					case 'product_delete':
-						$product_id = $_GET['product_id'];
-						$page_path = 'php/product/delete_product.php';
-					break;
-				}
-			}
+	if(isset($_GET['page']) == false){
+		header('location: /');
+	}
+	else{
+		switch($_GET['page']){
+			case 'all_product':
+				$title = 'Todos os produtos';
+				$page_path = 'php/product/list_product_all.php';
+			break;
+			case 'self_product':
+				$title = 'Produto';
+				$product_id = $_GET['product_id'];
+				$page_path = 'php/product/self_product.php';
+			break;
+			default:
+				header('location: /');
 		}
-		else{
-			header('location: /');
-		}
+	}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -62,9 +50,3 @@
 		?>
 	</body>
 </html>
-<?php
-	}
-	else{
-		header('location: admin_login.php');
-	}
-?>

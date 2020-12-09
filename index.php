@@ -13,22 +13,19 @@
 		<div class="container">
 			<div class="row">
 				<?php
-					include_once('php/components/menu.php');	
+					include_once('php/components/menu.php');
 				?>
 			</div>
-			<br>
 			<div class="row">
 				<?php
-					include_once('php/carousel.php');
+					include_once('php/video.php');
 				?>
 			</div>
-			<br>
 			<div class="row" id="sale">
 				<?php
 					include_once('php/sale.php');
 				?>
 			</div>
-			<br>
 			<div class="row" id="sobre">
 				<?php
 					include_once('php/who_we_are.php');

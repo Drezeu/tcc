@@ -1,35 +1,23 @@
 <?php
 	include_once('php/components/header_includes.php');
-	if(isset($_SESSION['cd_client'])){
-		if($_SESSION['st_client_admin'] == 1){
-			if(isset($_GET['page']) == false){
-				header('location: admin.php?status=admin_panel');
-			}
-			else{
-				switch($_GET['page']){
-					case 'category_new':
-						$title = 'Nova categoria';
-						$page_path = 'php/category/new_category.php';
-					break;
-					case 'category_data_list':
-						$title = 'Lista de  categorias';
-						$page_path = 'php/category/data_category.php';
-					break;
-					case 'category_edit':
-						$title = 'Editar categoria';
-						$category_id = $_GET['category_id'];
-						$page_path = 'php/category/edit_category.php';
-					break;
-					case 'category_delete':
-						$category_id = $_GET['category_id'];
-						$page_path = 'php/category/delete_category.php';
-					break;
-				}
-			}
+	if(isset($_GET['page']) == false){
+		header('location: /');
+	}
+	else{
+		switch($_GET['page']){
+			case 'all_category':
+				$title = 'Todas as categorias de produtos';
+				$page_path = 'php/category/list_category_all.php';
+			break;
+			case 'self_category':
+				$title = 'Categoria de produto';
+				$category_id = $_GET['category_id'];
+				$page_path = 'php/category/self_category.php';
+			break;
+			default:
+				header('location: /');
 		}
-		else{
-			header('location: /');
-		}
+	}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -58,13 +46,8 @@
 			</div>
 		</div>
 		<?php
+			$_GET['use_category'] = true;
 			include_once('php/components/body_scripts.php');
 		?>
 	</body>
 </html>
-<?php
-	}
-	else{
-		header('location: admin_login.php');
-	}
-?>

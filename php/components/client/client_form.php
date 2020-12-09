@@ -2,13 +2,16 @@
 	switch($_GET['client_form_type']){
 		case 'new_client':
 			$form_id = 'new_client';
-			$data_request = null;
+			$data_request = '
+				<form id="data_address_states_list_request">
+					<input type="hidden" name="form_action" value="address_states_list_request">
+				</form>';
 			$form_action = '
 				<input type="hidden" name="form_action" value="'.$form_id.'">
 			';
-			$form_attr_input = null;
+			$form_attr_input = 'required';
 			$form_file_input = '
-				<input class="form-control" type="file" name="photo" id="avatar_input" '.$form_attr_input.'>
+				<input class="form-control" type="file" name="photo" id="avatar_input">
 			';
 			$form_password_input = '
 				<br>
@@ -16,16 +19,10 @@
 					<div class="col-md-6 eye-password">
 						<label for="password"><strong>Nova senha:</strong></label>
 						<input class="form-control" type="password" name="password" id="password" '.$form_attr_input.'>
-						<?php
-							include_once("php/eye.php");
-						?>
 					</div>
 					<div class="col-md-6 eye-password">
 						<label for="conf_password"><strong>Confirmar senha:</strong></label>
 						<input class="form-control" type="password" name="conf_password" id="conf_password" '.$form_attr_input.'>
-						<?php
-							include_once("php/eye_conf.php");
-						?>
 					</div>
 				</div>
 			';
@@ -49,6 +46,9 @@
 				<form id="data_client_request">
 					<input type="hidden" name="form_action" value="data_client">
 				</form>
+				<form id="data_address_states_list_request">
+					<input type="hidden" name="form_action" value="address_states_list_request">
+				</form>
 			';
 			$form_action = null;
 			$form_attr_input = 'disabled';
@@ -62,7 +62,7 @@
 						<button class="btn btn-block btn-danger" id="delete_client">Apagar usuário</button>
 					</div>
 					<div class="col-md-6">
-						<a href="client.php?status=client_edit" class="btn btn-block btn-primary">Editar</a>
+						<a href="client.php?page=client_edit" class="btn btn-block btn-primary">Editar</a>
 					</div>
 				</div>
 			';
@@ -72,6 +72,9 @@
 			$data_request = '
 				<form id="data_client_request">
 					<input type="hidden" name="form_action" value="data_client">
+				</form>
+				<form id="data_address_states_list_request">
+					<input type="hidden" name="form_action" value="address_states_list_request">
 				</form>
 			';
 			$form_action = '
@@ -87,16 +90,10 @@
 					<div class="col-md-6 eye-password">
 						<label for="password"><strong>Nova senha:</strong></label>
 						<input class="form-control" type="password" name="password" id="password" '.$form_attr_input.'>
-						<?php
-							include_once("php/eye.php");
-						?>
 					</div>
 					<div class="col-md-6 eye-password">
 						<label for="conf_password"><strong>Confirmar senha:</strong></label>
 						<input class="form-control" type="password" name="conf_password" id="conf_password" '.$form_attr_input.'>
-						<?php
-							include_once("php/eye_conf.php");
-						?>
 					</div>
 				</div>
 			';
@@ -204,34 +201,34 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
+					<label for="zipcode"><strong>CEP:</strong></label>
+					<input class="form-control" type="text" name="zipcode" id="zipcode" <?php echo $form_attr_input; ?> maxlength="9">
+				</div>
+				<div class="col-md-6">
 					<label for="street"><strong>Logradouro:</strong></label>
 					<input class="form-control" type="text" name="street" id="street" <?php echo $form_attr_input; ?>>
 				</div>
+			</div>
+			<br>
+			<div class="row">
 				<div class="col-md-6">
 					<label for="neighborhood"><strong>Bairro</strong></label>
 					<input class="form-control" type="text" name="neighborhood" id="neighborhood" <?php echo $form_attr_input; ?>>
 				</div>
-			</div>
-			<br>
-			<div class="row">
 				<div class="col-md-6">
 					<label for="city"><strong>Cidade:</strong></label>
 					<input class="form-control" type="text" name="city" id="city" <?php echo $form_attr_input; ?>>
 				</div>
-				<div class="col-md-6">
-					<label for="state"><strong>Estado:</strong></label>
-					<input class="form-control" type="text" name="state" id="state" <?php echo $form_attr_input; ?>>
-				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-6">
-					<label for="complement"><strong>Complemento:</strong></label>
-					<input class="form-control" type="text" name="complement" id="complement" <?php echo $form_attr_input; ?>>
+					<label for="state"><strong>Estado:</strong></label>
+					<select class="form-control" type="text" name="state" id="state" <?php echo $form_attr_input; ?>></select>
 				</div>
 				<div class="col-md-6">
-					<label for="zipcode"><strong>CEP:</strong></label>
-					<input class="form-control" type="text" name="zipcode" id="zipcode" <?php echo $form_attr_input; ?> onkeypress="$(this).mask('00000-000');">
+					<label for="complement"><strong>Complemento:</strong></label>
+					<input class="form-control" type="text" name="complement" id="complement" <?php echo $form_attr_input; ?>>
 				</div>
 			</div>
 			<br>

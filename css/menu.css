@@ -1,5 +1,5 @@
 nav{
-	height: 10vh;
+	height: 8vh;
 	position: fixed;
 	left: 0px;
 	top: 0px;
@@ -7,18 +7,52 @@ nav{
 	display: inline-flex;
 	color: var(--primary);
 	background: var(--secondary);
-	box-shadow: 0px 2px 10px 3px lightgrey;
+	box-shadow: 0px 2px 10px 3px pink;
 	z-index: 100;
 	align-items: center;
 	justify-content: center;
 }
-nav a{
-	margin: 0 auto;
+#topnav a {
+	font-size: 100%;
+	font-family: palace;
+	transition: 0.25s;
+}
+#topnav a:hover {
+	background-color:#D25F99;
+	color: black;
+	font-size: 1.25rem;
+	font-family: palace;
 }
 .space-top{
 	height: 10vh;
 }
-.logo_site{
-	padding: 0.5vh 0.5vw;
-	width: 4.5vw;
+#logonav{
+	width: 25vw;
+	transition: 0.3s;
+	margin-top: -9vh;
+}
+#logonav:hover{
+	margin-top: 0vh;
+}
+.topnav-centered img {
+	float: right;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 30%;
+}
+#topnav-right a {
+	float: right;
+}
+#search{
+	width: 200%;
+	position: relative;
+	font-size: 1000%;
+}
+button img{
+	width: 30px;
+}
+button img:hover{
+	width: 40px;
 }

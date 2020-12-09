@@ -10,22 +10,28 @@
 					case 'admin_panel':
 						$title = 'Administração';
 						$page_path = 'php/admin/panel_admin.php';
+						$page_source_script = 'admin_panel';
 					break;
 					case 'admin_data':
 						$title = 'Seus dados';
 						$page_path = 'php/admin/data_admin.php';
+						$page_source_script = '-';
 					break;
 					case 'admin_edit':
 						$title = 'Editar dados cadastrais';
+						$_GET['use_image'] = true;
 						$page_path = 'php/admin/edit_admin.php';
+						$page_source_script = '-';
 					break;
 					case 'admin_new':
-						$title = 'Editar dados cadastrais';
+						$title = 'Novo administrador';
 						$page_path = 'php/admin/new_admin.php';
+						$page_source_script = 'new_admin';
 					break;
 					case 'admin_list':
 						$title = 'Lista de administradores';
 						$page_path = 'php/admin/list_admin.php';
+						$page_source_script = '-';
 					break;
 				}
 			}
@@ -61,6 +67,7 @@
 			</div>
 		</div>
 		<?php
+			$_GET['page_source'] = $page_source_script;
 			include_once('php/components/body_scripts.php');
 		?>
 	</body>
@@ -68,6 +75,6 @@
 <?php
 	}
 	else{
-		header('location: admin_login.php');
+		header('location: login.php');
 	}
 ?>

@@ -1,5 +1,7 @@
 <div class="row">
-	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<a href="admin.php?page=admin_panel" class="btn btn-block btn-info"><- Painel de administração</a>
+	</div>
 	<div class="col-md-4">
 		<h1>Lista de administradores</h1>
 	</div>
@@ -7,6 +9,7 @@
 		<a href="admin.php?page=admin_new" class="btn btn-block btn-info">Novo administrador</a>
 	</div>
 </div>
+<hr>
 <div class="row">
 	<div class="col-md-12">
 		<form id="data_admin_list_request">
